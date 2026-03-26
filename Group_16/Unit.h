@@ -1,4 +1,4 @@
-#pragma once
+﻿#pragma once
 
 #include <iostream>
 #include <string>
@@ -12,7 +12,7 @@ public:
     int CalculateDamage(Unit* target);
 
     bool IsDead();
-    
+
     void Heal(int amount);
     void RestoreMP(int amount);
 
@@ -24,6 +24,6 @@ protected:
     Stats CurrentStats;
     bool bIsDead;
 
-
 };
+
 
