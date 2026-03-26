@@ -13,8 +13,8 @@ public:
 
     bool IsDead();
 
-    void Heal(int amount);
-    void RestoreMP(int amount);
+    //void Heal(int amount);
+    //void RestoreMP(int amount);
 
     void PrintStatus();
 
@@ -23,6 +23,8 @@ protected:
     Stats BaseStats;
     Stats CurrentStats;
     bool bIsDead;
+
+
 
 };
 
