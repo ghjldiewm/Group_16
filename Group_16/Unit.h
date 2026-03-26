@@ -20,8 +20,7 @@ public:
 
 protected:
     std::string Name;
-    
-    Stats Stats;
+    Stats Status;
     bool bIsDead;
 
 

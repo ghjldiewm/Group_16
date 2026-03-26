@@ -5,9 +5,8 @@
 
 Unit::Unit(std::string name, Stats stats)
     :Name(name)
-
-    , Status(stats)
-    , bIsDead(false)
+    ,Status(stats)
+    ,bIsDead(false)
 {
 }
 
