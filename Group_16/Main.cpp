@@ -6,9 +6,9 @@
 int main() {
     std::string userName;
 
-    std::cout << "" << std::endl;
+    std::cout << "입력" << std::endl;
     std::getline(std::cin, userName);
-    std::cout << "" << userName << "" << std::endl;
+    std::cout << "출력" << userName << "" << std::endl;
 
     Unit player(userName);
     
