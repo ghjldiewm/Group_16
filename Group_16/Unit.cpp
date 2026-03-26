@@ -5,8 +5,8 @@
 
 Unit::Unit(std::string name, Stats stats)
     :Name(name)
-    , BaseStats(stats)
-    , CurrentStats(stats)
+
+    , Status(stats)
     , bIsDead(false)
 {
 }
@@ -23,16 +23,12 @@ void Unit::AttackTarget(Unit* target)
 }
 void Unit::TakeDamage(int damage)
 {
-    if (damage < 0)
-    {
-        damage = 0;
-    }
+   
+    Status.HP -= damage;
 
-    CurrentStats.HP -= damage;
-
-    if (CurrentStats.HP < 0)
+    if (Status.HP < 0)
     {
-        CurrentStats.HP = 0;
+       Status.HP = 0;
     }
 }
 
@@ -41,7 +37,7 @@ int Unit::CalculateDamage(Unit* target)
     {
         return;
     }
-    int damage = CurrentStats.Attack - target->CurrentStats.Defense;
+    int damage = Status.Attack - target->Status.Defense;
 
     if (damage < 1)
     {
