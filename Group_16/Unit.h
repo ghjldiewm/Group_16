@@ -1,10 +1,10 @@
 ﻿#pragma once
-
 #include <iostream>
 #include <string>
 #include "Stats.h"
 
-class Unit {
+class Unit
+{
 public:
     Unit(std::string name, Stats stats);
     void AttackTarget(Unit* target);
@@ -22,9 +22,4 @@ protected:
     std::string Name;
     Stats Status;
     bool bIsDead;
-
-
-
 };
-
-
