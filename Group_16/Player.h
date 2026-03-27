@@ -6,7 +6,7 @@ class Player : public Unit
 public:
     Player(std::string name, Stats stats);
 
-    void levelUp();
+    void LevelUp();
     void GetExperience(int amount);
     void PrintStatus() const override;
 

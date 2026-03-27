@@ -137,9 +137,6 @@
     <ClInclude Include="Stats.h" />
     <ClInclude Include="Unit.h" />
   </ItemGroup>
-  <ItemGroup>
-    <ResourceCompile Include="Group_16.rc" />
-  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

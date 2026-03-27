@@ -23,8 +23,9 @@ void Player::PrintStatus() const{
     std::cout << "------------------------------------" << std::endl;
 }
 
-void Player::levelUp()
+void Player::LevelUp()
 {
+    std::cout << "Level up!" << std::endl;
     Status.Level++;
     Status.MaxHP += 10;
     Status.MaxMP += 10;
@@ -35,10 +36,22 @@ void Player::levelUp()
     Status.Defense += 5;
     Status.Speed += 5;
     Status.Crit += 1;
+    std::cout << "현재 레벨: " << Status.Level << std::endl;
+
 }
+
 void Player::GetExperience(int amount)
 {
+    std::cout << amount << "의 경험치를 얻었습니다!" << std::endl;
+    Status.Exp += amount;
 
+    while (Status.Exp >= 100)
+    {
+        LevelUp();
+        Status.Exp -= 100;
+    }
+
+    std::cout << "현재 경험치: " << Status.Exp << std::endl;
 }
 
 /*struct Stats

@@ -7,15 +7,11 @@ Unit::Unit(std::string name, Stats stats)
     ,bIsDead(false)
 {}
 
-void Unit::AttackTarget(Unit* target)
+void Unit::AttackTarget(Unit& target)
 {
-    if (target == nullptr)
-    {
-        return;
-    }
     int damage = CalculateDamage(target);
 
-    target->TakeDamage(damage);
+    target.TakeDamage(damage);
 }
 
 void Unit::TakeDamage(int damage)
@@ -28,15 +24,15 @@ void Unit::TakeDamage(int damage)
     {
         std::cout << "' " << Name << " '" << "(이)가 쓰러졌습니다." << std::endl;
     }
+    else
+    {
+        std::cout << "적 " << Name <<"의 남은 체력: " << Status.HP << "남았습니다." << std::endl;
+    }
 }
 
-int Unit::CalculateDamage(Unit* target)
+int Unit::CalculateDamage(Unit& target)
 {
-    if (target == nullptr)
-    {
-        return;
-    }
-    int damage = Status.Attack - target->Status.Defense;
+    int damage = Status.Attack - target.Status.Defense;
 
     if (damage < 1)
     {
@@ -52,6 +48,10 @@ bool Unit::IsDead()
     {
         bIsDead = true;
         return bIsDead;
+    }
+    else
+    {
+        return false;
     }
 }
 

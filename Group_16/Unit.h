@@ -7,16 +7,16 @@ class Unit
 {
 public:
     Unit(std::string name, Stats stats);
-    void AttackTarget(Unit* target);
+    void AttackTarget(Unit& target);
     void TakeDamage(int damage);
-    int CalculateDamage(Unit* target);
+    int CalculateDamage(Unit& target);
 
     bool IsDead();
 
     //void Heal(int amount);
     //void RestoreMP(int amount);
 
-    virtual void PrintStatus() const;
+    virtual void PrintStatus() const {}
 
 protected:
     std::string Name;

@@ -16,7 +16,7 @@
 */
 
 kyunghopark::kyunghopark()
-    :Monster("박경호튜터", Stats{ 1,1,1,1,1,1,1,1 })
+    :Monster("박경호튜터", Stats{ 10000,10000,1,1,1,1,9999,999 })
 {
     
 }

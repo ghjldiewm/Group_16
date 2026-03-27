@@ -3,5 +3,6 @@
 
 class kyunghopark:public Monster 
 {
+public:
     kyunghopark();
 };
