@@ -16,7 +16,7 @@ public:
     //void Heal(int amount);
     //void RestoreMP(int amount);
 
-    void PrintStatus();
+    virtual void PrintStatus() const = 0;
 
 protected:
     std::string Name;

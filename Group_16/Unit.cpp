@@ -22,9 +22,11 @@ void Unit::TakeDamage(int damage)
 {
     Status.HP -= damage;
 
-    if (Status.HP < 0)
+    std::cout << "' " << Name << " '" << "(이)가 " << damage << "의 피해를 입었습니다." << std::endl;
+
+    if (IsDead())
     {
-       Status.HP = 0;
+        std::cout << "' " << Name << " '" << "(이)가 쓰러졌습니다." << std::endl;
     }
 }
 
@@ -44,9 +46,14 @@ int Unit::CalculateDamage(Unit* target)
     return damage;
 }
 
-    bool IsDead();
+bool Unit::IsDead()
+{
+    if (Status.HP <= 0)
+    {
+        bIsDead = true;
+        return bIsDead;
+    }
+}
 
     //void Heal(int amount);
     //void RestoreMP(int amount);
-
-    void PrintStatus();
