@@ -17,7 +17,6 @@ int main()
 
     player->AttackTarget(*monster);
 
-
     delete player;
     player = nullptr;
 
