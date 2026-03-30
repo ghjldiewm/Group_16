@@ -13,6 +13,12 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Source Files\MONSTER.cpp">
+      <UniqueIdentifier>{ed4881bf-6e69-4214-8fe1-bf4a6b6a3ef5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\MONSTER.h">
+      <UniqueIdentifier>{b4652234-08de-41b8-9653-060d20cea683}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
@@ -30,7 +36,6 @@
     <ClCompile Include="Player.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-
     <ClCompile Include="Item.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -41,19 +46,22 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Dice.cpp">
-        <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Slime.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Skeleton.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Bat.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\MONSTER.cpp</Filter>
     </ClCompile>
     <ClCompile Include="Goblin.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\MONSTER.cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="Slime.cpp">
+      <Filter>Source Files\MONSTER.cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="Sphinx.cpp">
+      <Filter>Source Files\MONSTER.cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="Skeleton.cpp">
+      <Filter>Source Files\MONSTER.cpp</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -85,19 +93,22 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Dice.h">
-        <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Slime.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Skeleton.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Bat.h">
-      <Filter>Header Files</Filter>
+      <Filter>Header Files\MONSTER.h</Filter>
     </ClInclude>
     <ClInclude Include="Goblin.h">
-      <Filter>Header Files</Filter>
+      <Filter>Header Files\MONSTER.h</Filter>
+    </ClInclude>
+    <ClInclude Include="Slime.h">
+      <Filter>Header Files\MONSTER.h</Filter>
+    </ClInclude>
+    <ClInclude Include="Sphinx.h">
+      <Filter>Header Files\MONSTER.h</Filter>
+    </ClInclude>
+    <ClInclude Include="Skeleton.h">
+      <Filter>Header Files\MONSTER.h</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

@@ -135,10 +135,10 @@
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="Skeleton.cpp" />
     <ClCompile Include="Slime.cpp" />
+    <ClCompile Include="Sphinx.cpp" />
     <ClCompile Include="Unit.cpp" />
   </ItemGroup>
   <ItemGroup>
-
     <ClInclude Include="Dice.h" />
     <ClInclude Include="Inventory.h" />
     <ClInclude Include="Item.h" />
@@ -151,6 +151,7 @@
     <ClInclude Include="Player.h" />
     <ClInclude Include="Skeleton.h" />
     <ClInclude Include="Slime.h" />
+    <ClInclude Include="Sphinx.h" />
     <ClInclude Include="Stats.h" />
     <ClInclude Include="Unit.h" />
   </ItemGroup>
