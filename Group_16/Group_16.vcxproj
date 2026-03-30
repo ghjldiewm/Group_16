@@ -143,10 +143,7 @@
     <ClCompile Include="Weapon.cpp" />
   </ItemGroup>
   <ItemGroup>
-<<<<<<< HEAD
-=======
     <ClInclude Include="Collected.h" />
->>>>>>> 751d05913a85e76fcf33b9e204b9d38f7869d84f
     <ClInclude Include="Dice.h" />
     <ClInclude Include="DungeonManager.h" />
     <ClInclude Include="Inventory.h" />
