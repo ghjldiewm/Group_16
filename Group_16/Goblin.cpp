@@ -20,7 +20,7 @@ Goblin::Goblin()
 
 void Goblin::EncounterMessage()
 {
-    ""
+    
 }
 
 void Goblin::Skill01()

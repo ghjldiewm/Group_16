@@ -25,5 +25,8 @@ void Slime::EncounterMessage()
 
 void Slime::Skill01()
 {
-
+    std::cout << Name << "이(가) 스킬을 사용했다!" << std::endl;
+    std::cout << "『                     " << std::endl;
+    std::cout << "     \"으...어어...\"     " << std::endl;
+    std::cout << "                      』" << std::endl;
 }

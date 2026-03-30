@@ -16,7 +16,14 @@
 */
 
 kyunghopark::kyunghopark()
-    :Monster("박경호튜터", Stats{ 10000,10000,1,1,1,1,9999,999 })
+    :Monster("박경호튜터", Stats{ 10000,10000,1,1,1,1,9999,999 }) { }
+
+void kyunghopark::EncounterMessage()
 {
-    
+
+}
+
+void kyunghopark::Skill01()
+{
+
 }

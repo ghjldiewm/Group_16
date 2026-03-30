@@ -7,7 +7,7 @@ public:
     Skeleton();
 
     void EncounterMessage() override;
-    void Skill01();
+    void Skill01() override;
 
 };
 
