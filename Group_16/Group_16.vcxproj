@@ -123,15 +123,12 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-<<<<<<< HEAD
     <ClCompile Include="Dice.cpp" />
     <ClCompile Include="Inventory.cpp" />
     <ClCompile Include="Item.cpp" />
     <ClCompile Include="ItemList.cpp" />
-=======
     <ClCompile Include="Bat.cpp" />
     <ClCompile Include="Goblin.cpp" />
->>>>>>> c88741c (add, feat)
     <ClCompile Include="kyunghopark.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="Monster.cpp" />
@@ -141,17 +138,14 @@
     <ClCompile Include="Unit.cpp" />
   </ItemGroup>
   <ItemGroup>
-<<<<<<< HEAD
+
     <ClInclude Include="Dice.h" />
-    <ClInclude Include="GameManager.h" />
     <ClInclude Include="Inventory.h" />
     <ClInclude Include="Item.h" />
     <ClInclude Include="ItemList.h" />
-=======
     <ClInclude Include="Bat.h" />
     <ClInclude Include="GameManager.h" />
     <ClInclude Include="Goblin.h" />
->>>>>>> c88741c (add, feat)
     <ClInclude Include="kyunghopark.h" />
     <ClInclude Include="Monster.h" />
     <ClInclude Include="Player.h" />
