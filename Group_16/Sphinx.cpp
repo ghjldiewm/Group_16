@@ -20,10 +20,24 @@ Sphinx::Sphinx()
 
 void Sphinx::EncounterMessage()
 {
-    std::cout << "" << std::endl;
+    for (int i = 0; i < 3; ++i)
+    {
+        std::cout << '.' << " ";
+        std::cout.flush();
+        std::this_thread::sleep_for(std::chrono::milliseconds(400));
+    }
+    std::cout << " \n 왠지 몹시 피곤해 보이는 스핑크스를 만났다. 내가 더 피곤하게 만들것 같다." << std::endl;
 }
 
 void Sphinx::Skill01()
 {
-    std::cout << "" << std::endl;
+    int Choice;
+    std::cout << Name << " 이(가) 스킹을 사용했다! " << std::endl;
+    std::this_thread::sleep_for(std::chrono::milliseconds(1200));
+    std::cout << " 
+    std::cout << " 
+    std::cout << " 
+    std::cout << " 
+    std::cout << " 
+    std::cout << " 
 }
