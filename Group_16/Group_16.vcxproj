@@ -127,7 +127,6 @@
     <ClCompile Include="Dice.cpp" />
     <ClCompile Include="DungeonManager.cpp" />
     <ClCompile Include="Inventory.cpp" />
-    <ClCompile Include="Item.cpp" />
     <ClCompile Include="ItemList.cpp" />
     <ClCompile Include="Bat.cpp" />
     <ClCompile Include="Goblin.cpp" />
