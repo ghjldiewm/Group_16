@@ -26,16 +26,139 @@
 // 상점 -> 시세에 따라..?
 // 할인 이벤트
 
+void DungeonManager::Gathering(Player& player, DiceSystem& dice)
+{
+    std::cout << "채집을 하러 뒷산에 왔습니다." << std::endl;
+    int result = dice.RollDice();
 
-void DungeonManager::MovePlayer(Player& player, DiceSystem& dice) {
+    if (result <= 3)
+    {
+        //잡템 
+    }
+    else
+    {
+        //쓸만한템
+    }
 
+}
+
+void DungeonManager::StatsBoost(Player& player)
+{
+    std::cout << "코딩신의 가호를 받아 능력치가 상승했습니다!" << std::endl;
+
+    /*player.Status.Attack += 10;
+    player.Defense += 10;*/ 
+    //스텟상승 어떻게 시킵니까??
+
+    void PrintStatus(); //이건 왜 작동 안하지..
+}
+
+void DungeonManager::TreasureBox(Player& player)
+{
+    std::cout << "숨겨진 보물상자를 발견했습니다!!" << std::endl;
+
+    for (int i = 0; i < 2; ++i)
+    {
+        std::cout << "달그락" << " ";
+        std::cout.flush(); //버퍼에 쌓지않고 그때그때 출력하게 해줌
+        std::this_thread::sleep_for(std::chrono::milliseconds(500));
+    }
+    std::cout << "상자 안에서 '두쫀쿠'를 발견했습니다!" << std::endl;
+}
+
+void DungeonManager::MovePlayer(Player& player, DiceSystem& dice)
+{
+    std::cout << "현재 주사위Count: " << countDice << std::endl;
+   
     int steps = dice.ThrowDice();
+    if (steps == 0)
+    {
+        std::cout << "이동을 취소합니다." << std::endl;
+        //다시 메뉴선택을 할 수있게 (인벤을 확인하던지 스텟을 확인하던지)
+        return;
+    }
+    else
+    {
+        std::cout << "[+] 이동중..." << std::endl;
+        countDice++;
+        player.GetExperience(30); //경험치 양은 추후 조절
+    }
 
-    std::cout << "[+] 주사위를 굴려 " << steps << "칸 이동합니다!" << std::endl;
-
-    currentPos += steps;
-
-    if (currentPos > goalPos) {
+    if (countDice < 3)
+    {
+        switch (steps)
+        {
+        case 1:
+            //일반 몬스터
+            break;
+        case 2:
+            //쉬운 몬스터
+            break;
+        case 3:
+            //쉬운 몬스터
+            break;
+        case 4:
+            Gathering(player, dice); 
+            break;
+        case 5:
+            StatsBoost(player);
+            break;
+        case 6:
+            TreasureBox(player);
+            break;
+        } 
+    }
+    if (3 <= countDice && countDice < 6)
+    {
+        switch (steps)
+        {
+        case 1:
+            //일반 몬스터
+            break;
+        case 2:
+            //일반 몬스터
+            break;
+        case 3:
+            //쉬운 몬스터
+            break;
+        case 4:
+            Gathering(player, dice);
+            break;
+        case 5:
+            StatsBoost(player);
+            break;
+        case 6:
+            TreasureBox(player);
+            break;
+        }
+    }
+    if (6 <=countDice &&countDice < 9)
+    {
+        switch (steps)
+        {
+        case 1:
+            //강한 몬스터
+            break;
+        case 2:
+            //일반 몬스터
+            break;
+        case 3:
+            //일반 몬스터
+            break;
+        case 4:
+            Gathering(player, dice);
+            break;
+        case 5:
+            StatsBoost(player);
+            break;
+        case 6:
+            TreasureBox(player);
+            break;
+        }
+    }
+       
+    if (countDice == 10)
+    {
         std::cout << "\n[WARNING!] 강력한 보스의 기운이 느껴집니다!" << std::endl;
         // 추후에 보스 나오면 수정할 부분.
         // 
@@ -57,45 +180,15 @@ void DungeonManager::MovePlayer(Player& player, DiceSystem& dice) {
         return;
     }
 
-    std::cout << "현재 위치: " << currentPos << " / " << goalPos << std::endl;
-
-    // 1. 5칸마다 보스 조우 체크 (0번 칸 제외를 위해 currentPos > 0 추가)
-    if (currentPos > 0 && currentPos % 5 == 0) {
-
-        TriggerBossEvent(player);
-    }
-    // 2. 일반 칸일 경우 랜덤 이벤트 발생
-    else {
-        ProcessRandomEvent(player, dice);
-    }
+       
+        
 }
 
 
-void DungeonManager::ProcessRandomEvent(Player& player, DiceSystem& dice) {
-
-    std::cout << "* 던전을 탐색합니다[다이스]" << std::endl;
-
-    int eventSeed = dice.RollDice(); // 주사위 값에 따라 이벤트 분기
-
-    if (eventSeed <= 2) {
-        std::cout << "[!] 몬스터를 만났습니다! 전투를 시작합니다." << std::endl;
-        // 여기서 팀원이 만든 Monster 생성 및 BattleManager 호출
-    }
-    else if (eventSeed == 3) {
-        std::cout << "[*] 보물상자를 발견했습니다! 체력이 회복됩니다." << std::endl;
-    }
-    else {
-        std::cout << "[...] 아무 일도 일어나지 않았습니다. 계속 전진합니다." << std::endl;
-    }
-}
-
-
-void DungeonManager::TriggerBossEvent(Player& player) {
-    std::cout << "\n[!!!] 일반적이지 않은 몬스터의 기운이 느껴집니다!" << std::endl;
 
     // 팀원이 만든 BossMonster 생성 (예시)
     // BossMonster* boss = new BossMonster("대악마", bossStats);
 
     // 전투 매니저 호출 로직을 여기에 작성하세요.
     // battleManager.StartBattle(player, boss);
-}
+
