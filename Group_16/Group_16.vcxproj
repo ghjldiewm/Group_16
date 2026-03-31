@@ -154,6 +154,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AlchemyWorkshop.h" />
+    <ClInclude Include="BattleManager.h" />
     <ClInclude Include="Collected.h" />
     <ClInclude Include="Craft.h" />
     <ClInclude Include="CraftUI.h" />
@@ -184,6 +185,7 @@
     <ClInclude Include="Spider.h" />
     <ClInclude Include="Stats.h" />
     <ClInclude Include="Transaction.h" />
+    <ClInclude Include="UIManager.h" />
     <ClInclude Include="Unit.h" />
     <ClInclude Include="Weapon.h" />
     <ClInclude Include="Wolf.h" />
