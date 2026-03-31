@@ -86,6 +86,7 @@
     </ClCompile>
     <ClCompile Include="AlchemyWorkshop.cpp">
       <Filter>Source Files</Filter>
+    </ClCompile>
     <ClCompile Include="Wolf.cpp">
       <Filter>Source Files\MONSTER.cpp</Filter>
     </ClCompile>
