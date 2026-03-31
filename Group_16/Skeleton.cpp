@@ -28,6 +28,10 @@ void Skeleton::EncounterMessage()
     }
     std::cout << "스켈레톤이 되어버린 [Unreal_4기] 수료생과 조우하였다!" << std::endl;
     std::this_thread::sleep_for(std::chrono::milliseconds(1000));
+    std::cout << "『                       " << std::endl;
+    std::cout << "    ..달그락..삐그덕..    " << std::endl;
+    std::cout << "                       』" << std::endl;
+    std::this_thread::sleep_for(std::chrono::milliseconds(1000));
 }
 
 void Skeleton::Skill01()
