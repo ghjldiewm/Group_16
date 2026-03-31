@@ -222,6 +222,7 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="UseItem.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="MonsterList.h">
       <Filter>Header Files</Filter>
