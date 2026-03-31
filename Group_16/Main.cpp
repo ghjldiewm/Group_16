@@ -14,12 +14,16 @@ int main()
     
     Stats playerStats;
     Inventory* inventory = new Inventory;
+
+
     Player* player = new Player(name, playerStats, inventory);
     player->PrintStatus();
     Monster* monster = nullptr;
 
     ItemList itemlist;
     itemlist.GetItemList();
+
+    player->GetInventory()->AddItem(1, 100);
 
     UIManager ui;
     //ui.DrawTitleScreen();
@@ -126,6 +130,8 @@ int main()
 
     }
 
+    monster = new Sphinx();
+    monster->Skill01();
 
     while (countDice < 7) {
 
@@ -211,6 +217,10 @@ int main()
         }
 
     }
+
+    monster = new Sphinx();
+    monster->Skill02();
+    monster->Skill03();
 
     while (countDice < 10) {
 
@@ -298,10 +308,12 @@ int main()
     }
 
 
+    monster = new Sphinx();
+    monster->Skill04();
 
     // [Fix] 마지막 - 보스(박경호 튜토님) 출현 구현
     monster = new kyunghopark();
-    bm.BossBattle(*player, *monster, ui); 
+    bm.BossBattle(*player, *monster, ui, *inventory); 
 
 
 

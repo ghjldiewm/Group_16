@@ -59,11 +59,12 @@ public:
             std::cout.flush();
             std::this_thread::sleep_for(std::chrono::milliseconds(1000));
         }
+        std::cout << std::endl;
 
     }
 
 
-    void BossBattle(Player& player, Monster& monster, UIManager& ui) {
+    void BossBattle(Player& player, Monster& monster, UIManager& ui, Inventory& inventory) {
         //std::cout << " " << monster.GetName() << "(이)가 나타났다!" << std::endl;
         monster.EncounterMessage();
 
@@ -72,7 +73,7 @@ public:
             ui.DrawBattleUI(player, monster, inventory);
 
             // 2. 플레이어 턴
-            ProcessPlayerTurn(player, monster);
+            ProcessPlayerTurn(player, monster, inventory);
             if (monster.IsDead()) break;
 
             // 3. 몬스터 턴
@@ -81,18 +82,20 @@ public:
         }
 
         // 4. 결과 처리
-        if (player.IsDead()) {
+         // 여기서 경험치 획득이나 아이템 드롭 로직 연결
+           if (player.IsDead()) {
             std::cout << " 패배했습니다..." << std::endl;
         }
         else {
             std::cout << " 승리했습니다! " << monster.GetName() << "을(를) 물리쳤습니다." << std::endl;
-            // 여기서 경험치 획득이나 아이템 드롭 로직 연결
         }
         for (int i = 0; i < 5; ++i)
         {
             std::cout << '.' << " ";
             std::cout.flush();
             std::this_thread::sleep_for(std::chrono::milliseconds(200));
+            std::cout << " " << std::endl;
+            std::cout << std::endl;
         }
 
     }
