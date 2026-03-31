@@ -16,7 +16,7 @@
 */
 
 Wolf::Wolf()
-    :Monster("늑대", Stats{ 200,200,1,1,80,20,1,1,35 }) { 
+    :Monster("늑대", Stats{ 200,200,1,1,80,20,1,1,35 }) {
 }
 
 void Wolf::EncounterMessage()
@@ -27,12 +27,7 @@ void Wolf::EncounterMessage()
         std::cout.flush();
         std::this_thread::sleep_for(std::chrono::milliseconds(400));
     }
-    std::cout << "\n코드를 보며 울고있는 늑대와 조우했다!" << std::endl;
-    std::this_thread::sleep_for(std::chrono::milliseconds(1000));
-    std::cout << "『                       " << std::endl;
-    std::cout << "     \"아우~~~~!!!!\"    " << std::endl;
-    std::cout << "                       』" << std::endl;
-    std::this_thread::sleep_for(std::chrono::milliseconds(1000));
+    std::cout << "\n늑대와 조우하였다!(수정필)" << std::endl; // 수정 필요
 }
 
 void Wolf::Skill01() // ===쉬움===
@@ -41,7 +36,7 @@ void Wolf::Skill01() // ===쉬움===
     std::cout << Name << "이(가) 스킬을 사용했다!" << std::endl;
     std::this_thread::sleep_for(std::chrono::milliseconds(1200));
     std::cout << "『                       " << std::endl;
-    std::cout << "     \"크르르르....\"    " << std::endl;
+    std::cout << "     \"으...어어...\"    " << std::endl;
     std::cout << "                       』" << std::endl;
     std::this_thread::sleep_for(std::chrono::milliseconds(1200));
     std::cout << Name << "이(가) 전생의 기억을 떠올립니다.." << std::endl;
@@ -77,7 +72,7 @@ void Wolf::Skill02() // ===중간===
     std::cout << Name << "이(가) 스킬을 사용했다!" << std::endl;
     std::this_thread::sleep_for(std::chrono::milliseconds(1200));
     std::cout << "『                       " << std::endl;
-    std::cout << "     \"아우~~~~!!!!\"    " << std::endl;
+    std::cout << "     \"으...어어...\"    " << std::endl;
     std::cout << "                       』" << std::endl;
     std::this_thread::sleep_for(std::chrono::milliseconds(1200));
     std::cout << Name << "이(가) 전생의 기억을 떠올립니다.." << std::endl;
@@ -113,7 +108,7 @@ void Wolf::Skill03() // ===어려움===
     std::cout << Name << "이(가) 스킬을 사용했다!" << std::endl;
     std::this_thread::sleep_for(std::chrono::milliseconds(1200));
     std::cout << "『                       " << std::endl;
-    std::cout << "     \"아우~~~~!!!!\"    " << std::endl;
+    std::cout << "     \"으...어어...\"    " << std::endl;
     std::cout << "                       』" << std::endl;
     std::this_thread::sleep_for(std::chrono::milliseconds(1200));
     std::cout << Name << "이(가) 전생의 기억을 떠올립니다.." << std::endl;

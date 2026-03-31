@@ -16,7 +16,8 @@
 */
 
 Zombie::Zombie()
-    :Monster("좀비", Stats{ 270,270,1,1,85,25,1,1,35 }) { }
+    :Monster("좀비", Stats{ 200,200,1,1,80,20,1,1,35 }) { // 스탯 수정 필요
+}
 
 void Zombie::EncounterMessage()
 {
@@ -26,12 +27,7 @@ void Zombie::EncounterMessage()
         std::cout.flush();
         std::this_thread::sleep_for(std::chrono::milliseconds(400));
     }
-    std::cout << "\n핫식스에 중독된 사ㄹㅏ.... 좀비와 조우했다!" << std::endl; // 수정 필요
-    std::this_thread::sleep_for(std::chrono::milliseconds(1000));
-    std::cout << "『                       " << std::endl;
-    std::cout << "     \"그워어......\"    " << std::endl;
-    std::cout << "                       』" << std::endl;
-    std::this_thread::sleep_for(std::chrono::milliseconds(1000));
+    std::cout << "\n좀비와 조우하였다!(수정필)" << std::endl; // 수정 필요
 }
 
 void Zombie::Skill01() // ===쉬움===
@@ -40,10 +36,10 @@ void Zombie::Skill01() // ===쉬움===
     std::cout << Name << "이(가) 스킬을 사용했다!" << std::endl;
     std::this_thread::sleep_for(std::chrono::milliseconds(1200));
     std::cout << "『                       " << std::endl;
-    std::cout << "     \"그워어......\"    " << std::endl;
+    std::cout << "     \"으...어어...\"    " << std::endl;
     std::cout << "                       』" << std::endl;
     std::this_thread::sleep_for(std::chrono::milliseconds(1200));
-    std::cout << Name << "이(가) 핫식스를 홀짝대며 전생의 기억을 떠올립니다.." << std::endl;
+    std::cout << Name << "이(가) 전생의 기억을 떠올립니다.." << std::endl;
 
     for (int i = 0; i < 5; ++i)
     {
@@ -52,15 +48,15 @@ void Zombie::Skill01() // ===쉬움===
         std::this_thread::sleep_for(std::chrono::milliseconds(600));
     }
 
-    std::cout << "\ntemplate <typename T>의 의미로 가장 알맞은 것은?" << std::endl;
-    std::cout << "1. 런타임에 타입을 자동으로 바꾼다" << std::endl;
-    std::cout << "2. 어떤 타입이 올지 모르지만, 그 타입을 T라고 부르겠다" << std::endl;
-    std::cout << "3. T는 항상 int를 의미한다" << std::endl;
-    std::cout << "4. 템플릿은 함수 오버로딩을 금지한다" << std::endl;
+    std::cout << "\n상속에서 파생 클래스에 대한 설명으로 가장 알맞은 것은?" << std::endl;
+    std::cout << "1. 다른 클래스를 상속받는 클래스" << std::endl;
+    std::cout << "2. 다른 클래스를 상속해주는 클래스" << std::endl;
+    std::cout << "3. 반드시 struct여야 하는 클래스" << std::endl;
+    std::cout << "4. 함수만 가질 수 있는 클래스" << std::endl;
     std::cout << "선택: ";
     std::cin >> Choice;
 
-    if (Choice == 2)
+    if (Choice == 1)
     {
         std::cout << "맞췄을 때 이벤트" << std::endl;
     }
@@ -76,10 +72,10 @@ void Zombie::Skill02() // ===중간===
     std::cout << Name << "이(가) 스킬을 사용했다!" << std::endl;
     std::this_thread::sleep_for(std::chrono::milliseconds(1200));
     std::cout << "『                       " << std::endl;
-    std::cout << "     \"그워어......\"    " << std::endl;
+    std::cout << "     \"으...어어...\"    " << std::endl;
     std::cout << "                       』" << std::endl;
     std::this_thread::sleep_for(std::chrono::milliseconds(1200));
-    std::cout << Name << "이(가) 핫식스를 홀짝대며 전생의 기억을 떠올립니다.." << std::endl;
+    std::cout << Name << "이(가) 전생의 기억을 떠올립니다.." << std::endl;
 
     for (int i = 0; i < 5; ++i)
     {
@@ -88,15 +84,15 @@ void Zombie::Skill02() // ===중간===
         std::this_thread::sleep_for(std::chrono::milliseconds(600));
     }
 
-    std::cout << "\n함수 오버로딩이 유효해지는 경우로 가장 알맞은 것은?" << std::endl;
-    std::cout << "1. 함수 이름은 같고 매개변수 타입이 다르다" << std::endl;
-    std::cout << "2. 함수 이름은 같고 반환형만 다르다" << std::endl;
-    std::cout << "3. 함수 이름은 다르고 매개변수와 반환형이 같다" << std::endl;
-    std::cout << "4. 함수 이름/매개변수/반환형이 모두 같다" << std::endl;
+    std::cout << "\n다형성을 위해 기본 클래스 함수에 붙이는 키워드로 가장 알맞은 것은?" << std::endl;
+    std::cout << "1. template" << std::endl;
+    std::cout << "2. typedef" << std::endl;
+    std::cout << "3. virtual" << std::endl;
+    std::cout << "4. constexpr" << std::endl;
     std::cout << "선택: ";
     std::cin >> Choice;
 
-    if (Choice == 1)
+    if (Choice == 3)
     {
         std::cout << "맞췄을 때 이벤트" << std::endl;
     }
@@ -112,10 +108,10 @@ void Zombie::Skill03() // ===어려움===
     std::cout << Name << "이(가) 스킬을 사용했다!" << std::endl;
     std::this_thread::sleep_for(std::chrono::milliseconds(1200));
     std::cout << "『                       " << std::endl;
-    std::cout << "     \"그워어......\"    " << std::endl;
+    std::cout << "     \"으...어어...\"    " << std::endl;
     std::cout << "                       』" << std::endl;
     std::this_thread::sleep_for(std::chrono::milliseconds(1200));
-    std::cout << Name << "이(가) 핫식스를 홀짝대며 전생의 기억을 떠올립니다.." << std::endl;
+    std::cout << Name << "이(가) 전생의 기억을 떠올립니다.." << std::endl;
 
     for (int i = 0; i < 5; ++i)
     {
@@ -124,11 +120,11 @@ void Zombie::Skill03() // ===어려움===
         std::this_thread::sleep_for(std::chrono::milliseconds(600));
     }
 
-    std::cout << "\n반환 타입만 다른 경우 함수 오버로딩이 성립하지 않는다는 설명으로 가장 알맞은 것은?" << std::endl;
-    std::cout << "1. C++은 함수 이름만으로만 함수를 구분하기 때문이다" << std::endl;
-    std::cout << "2. 호출 시점에 반환형 정보만으로 어떤 함수를 호출할지 구분할 수 없기 때문이다" << std::endl;
-    std::cout << "3. 반환형이 다르면 무조건 템플릿으로 바꿔야 하기 때문이다" << std::endl;
-    std::cout << "4. 반환형이 다르면 링크 단계에서 자동으로 합쳐지기 때문이다" << std::endl;
+    std::cout << "\n순수 가상 함수에 대한 설명으로 가장 알맞은 것은?" << std::endl;
+    std::cout << "1. 기본 클래스에서 구현이 반드시 있어야 한다" << std::endl;
+    std::cout << "2. virtual 함수() = 0; 형태로 선언하며, 파생 클래스에서 구현을 강제한다" << std::endl;
+    std::cout << "3. static 함수의 다른 이름이다" << std::endl;
+    std::cout << "4. 객체를 여러 개 만드는 문법이다" << std::endl;
     std::cout << "선택: ";
     std::cin >> Choice;
 
