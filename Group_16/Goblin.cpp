@@ -20,7 +20,18 @@ Goblin::Goblin()
 
 void Goblin::EncounterMessage()
 {
-    
+    for (int i = 0; i < 3; ++i)
+    {
+        std::cout << '.' << " ";
+        std::cout.flush();
+        std::this_thread::sleep_for(std::chrono::milliseconds(400));
+    }
+    std::cout << "Zep포인트를 훔쳐가려는 고블린과 조우했다!" << std::endl;
+    std::this_thread::sleep_for(std::chrono::milliseconds(1000));
+    std::cout << "『                                                           " << std::endl;
+    std::cout << "     \"키이익!!! 포인트 내놔!! 오토바이 사야해!! 오토바이!!!\"    " << std::endl;
+    std::cout << "                                                           』" << std::endl;
+    std::this_thread::sleep_for(std::chrono::milliseconds(1000));
 }
 
 void Goblin::Skill01()
@@ -29,10 +40,10 @@ void Goblin::Skill01()
     std::cout << Name << "이(가) 스킬을 사용했다!" << std::endl;
     std::this_thread::sleep_for(std::chrono::milliseconds(1200));
     std::cout << "『                       " << std::endl;
-    std::cout << "     \"으...어어...\"    " << std::endl;
+    std::cout << "     \"캬아아악!!!!\"    " << std::endl;
     std::cout << "                       』" << std::endl;
     std::this_thread::sleep_for(std::chrono::milliseconds(1200));
-    std::cout << Name << "이(가) 전생의 기억을 떠올립니다.." << std::endl;
+    std::cout << Name << "이(가) 하악대며 전생의 기억을 떠올립니다.." << std::endl;
 
     for (int i = 0; i < 5; ++i)
     {
@@ -65,10 +76,10 @@ void Goblin::Skill02()
     std::cout << Name << "이(가) 스킬을 사용했다!" << std::endl;
     std::this_thread::sleep_for(std::chrono::milliseconds(1200));
     std::cout << "『                       " << std::endl;
-    std::cout << "     \"으...어어...\"    " << std::endl;
+    std::cout << "     \"캬아아악!!!!\"    " << std::endl;
     std::cout << "                       』" << std::endl;
     std::this_thread::sleep_for(std::chrono::milliseconds(1200));
-    std::cout << Name << "이(가) 전생의 기억을 떠올립니다.." << std::endl;
+    std::cout << Name << "이(가) 하악대며 전생의 기억을 떠올립니다.." << std::endl;
 
     for (int i = 0; i < 5; ++i)
     {
@@ -101,10 +112,10 @@ void Goblin::Skill03()
     std::cout << Name << "이(가) 스킬을 사용했다!" << std::endl;
     std::this_thread::sleep_for(std::chrono::milliseconds(1200));
     std::cout << "『                       " << std::endl;
-    std::cout << "     \"으...어어...\"    " << std::endl;
+    std::cout << "     \"캬아아악!!!!\"    " << std::endl;
     std::cout << "                       』" << std::endl;
     std::this_thread::sleep_for(std::chrono::milliseconds(1200));
-    std::cout << Name << "이(가) 전생의 기억을 떠올립니다.." << std::endl;
+    std::cout << Name << "이(가) 하악대며 전생의 기억을 떠올립니다.." << std::endl;
 
     for (int i = 0; i < 5; ++i)
     {
