@@ -69,7 +69,7 @@ public:
 
         while (!player.IsDead() && !monster.IsDead()) {
             // 1. 화면 그리기 (UIManager 활용)
-            ui.DrawBattleUI(player, monster);
+            ui.DrawBattleUI(player, monster, inventory);
 
             // 2. 플레이어 턴
             ProcessPlayerTurn(player, monster);
