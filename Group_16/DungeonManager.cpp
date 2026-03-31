@@ -46,9 +46,8 @@ void DungeonManager::StatsBoost(Player& player)
 {
     std::cout << "코딩신의 가호를 받아 능력치가 상승했습니다!" << std::endl;
 
-    /*player.Status.Attack += 10;
-    player.Defense += 10;*/ 
-    //스텟상승 어떻게 시킵니까??
+    player.AddAttack(10);
+    player.AddDefense(10);
 
     void PrintStatus(); //이건 왜 작동 안하지..
 }

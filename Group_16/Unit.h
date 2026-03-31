@@ -11,6 +11,8 @@ public:
     void AttackTarget(Unit& target);
     void TakeDamage(int damage);
     int CalculateDamage(Unit& target);
+    void AddAttack(int amount);
+    void AddDefense(int amount);
 
     bool IsDead();
 
@@ -30,6 +32,9 @@ public:
     int GetExp() const { return Status.Exp; }
     int GetLevel() const { return Status.Level; }
 
+    std::string GetName() const { return Name; }
+    Stats GetStatus() const { return Status; }
+
     void SetMaxHP(int maxHP);
     void SetHP(int hp);
     void SetMaxMP(int maxMP);
@@ -40,6 +45,8 @@ public:
     void SetCrit(int crit);
     void SetExp(int exp);
     void SetLevel(int level);
+
+
 
 protected:
     std::string Name;

@@ -56,6 +56,16 @@ bool Unit::IsDead()
     }
 }
 
+void Unit::AddAttack(int amount)
+{
+    Status.Attack += amount;
+}
+
+void Unit::AddDefense(int amount)
+{
+    Status.Defense += amount;
+}
+
 void Unit::SetMaxHP(int maxHP)
 {
     // MaxHP는 최소 1은 되게
