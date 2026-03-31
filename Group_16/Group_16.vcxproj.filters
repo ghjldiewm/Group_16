@@ -86,6 +86,20 @@
     </ClCompile>
     <ClCompile Include="AlchemyWorkshop.cpp">
       <Filter>Source Files</Filter>
+    <ClCompile Include="Wolf.cpp">
+      <Filter>Source Files\MONSTER.cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="Spider.cpp">
+      <Filter>Source Files\MONSTER.cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="Dragon.cpp">
+      <Filter>Source Files\MONSTER.cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="Orc.cpp">
+      <Filter>Source Files\MONSTER.cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="Zombie.cpp">
+      <Filter>Source Files\MONSTER.cpp</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -179,5 +193,25 @@
     <ClInclude Include="ICraftworkshop.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Wolf.h">
+      <Filter>Header Files\MONSTER.h</Filter>
+    </ClInclude>
+    <ClInclude Include="Spider.h">
+      <Filter>Header Files\MONSTER.h</Filter>
+    </ClInclude>
+    <ClInclude Include="Zombie.h">
+      <Filter>Header Files\MONSTER.h</Filter>
+    </ClInclude>
+    <ClInclude Include="Dragon.h">
+      <Filter>Header Files\MONSTER.h</Filter>
+    </ClInclude>
+    <ClInclude Include="Orc.h">
+      <Filter>Header Files\MONSTER.h</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="Group_16.rc">
+      <Filter>Resource Files</Filter>
+    </ResourceCompile>
   </ItemGroup>
 </Project>

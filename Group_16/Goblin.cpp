@@ -16,7 +16,7 @@
 */
 
 Goblin::Goblin()
-    :Monster("고블린", Stats{400}){ }
+    :Monster("고블린", Stats{ 200,200,1,1,70,0,1,1,35 }) { }
 
 void Goblin::EncounterMessage()
 {

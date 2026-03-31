@@ -119,7 +119,7 @@ void Slime::Skill03() // ===어려움===
         std::this_thread::sleep_for(std::chrono::milliseconds(600));
     }
 
-    std::cout << "\n아래 중 배열 임의 접근(Random access)의 의미로 가장 알맞은 것은?" << std::endl;
+    std::cout << "\n아래 중 배열 임의 접근의 의미로 가장 알맞은 것은?" << std::endl;
     std::cout << "1. 배열은 항상 랜덤 값으로 채워진다" << std::endl;
     std::cout << "2. arr[2]처럼 인덱스로 한 번에 특정 위치 원소에 접근할 수 있다" << std::endl;
     std::cout << "3. 배열은 반복문으로만 접근할 수 있다" << std::endl;
