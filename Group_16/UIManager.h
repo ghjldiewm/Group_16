@@ -26,24 +26,33 @@ public:
         system("cls"); // 화면 지우기
         SetColor(11); // 청록색으로 설정 (분위기)
 
-        std::cout << "##################################################################" << std::endl;
-        std::cout << "#                                                                #" << std::endl;
-        std::cout << "#                  TEXT ADVENTURE RPG: Group_16                  #" << std::endl; // 유니코드 아이콘 사용 가능
-        std::cout << "#                                                                #" << std::endl;
-        std::cout << "##################################################################" << std::endl;
+        std::cout << "\n\n\n\n\n" << std::endl;
+        std::cout << "                      .d8888b.                             888               " << std::endl;
+        std::cout << "                     d88P  Y88b                            888               " << std::endl;
+        std::cout << "                     Y88b.                                 888               " << std::endl;
+        std::cout << "                      'Y888b.   88888b.   8888b.  888d888 888888  8888b.     " << std::endl;
+        std::cout << "                         'Y88b. 888 '88b     '88b 888P'   888        '88b   " << std::endl;
+        std::cout << "                           '888 888  888 .d888888 888     888    .d888888   " << std::endl;
+        std::cout << "                     Y88b  d88P 888 d88P 888  888 888     Y88b.  888  888   " << std::endl;
+        std::cout << "                      'Y8888P'  88888P'  'Y888888 888      'Y888 'Y888888   " << std::endl;
+        std::cout << "                                888                                          " << std::endl;
+        std::cout << "                                888                                          " << std::endl;
+        std::cout << "                                888                                          " << std::endl;
+        std::cout << "                      888b     d888                   888      888            " << std::endl;
+        std::cout << "                      8888b   d8888                   888      888            " << std::endl;
+        std::cout << "                      88888b.d88888                   888      888            " << std::endl;
+        std::cout << "                      888Y88888P888  8888b.  888d888 88888b.  888  .d88b.    " << std::endl;
+        std::cout << "                      888 Y888P 888     '88b 888P'   888 '88b 888 d8P  Y8b   " << std::endl;
+        std::cout << "                      888  Y8P  888 .d888888 888     888  888 888 88888888   " << std::endl;
+        std::cout << "                      888   '   888 888  888 888     888 d88P 888 Y8b.       " << std::endl;
+        std::cout << "                      888       888 'Y888888 888     88888P'  888  'Y8888    " << std::endl;
+        std::cout << "\n\n\n\n\n" << std::endl;
+ 
 
         SetColor(14); // 노란색으로 성 그림 출력
-        std::cout << "                _|_           _|_           _|_                  " << std::endl;
-        std::cout << "               |   |         |   |         |   |                 " << std::endl;
-        std::cout << "            ___|___|___---___|___|___---___|___|___              " << std::endl;
-        std::cout << "           |       |       |       |       |       |             " << std::endl;
-        std::cout << "           |   -   |   -   |   -   |   -   |   -   |             " << std::endl;
-        std::cout << "           |_______|_______|_______|_______|_______|             " << std::endl;
-        std::cout << "            |                                     |              " << std::endl;
-        std::cout << "            |              [======]               |              " << std::endl;
-        std::cout << "            |______________[======]_______________|              " << std::endl;
 
         SetColor(7); // 다시 기본 색상으로
+
         std::cout << "\n\n             [엔터를 눌러 모험을 시작하세요]             " << std::endl;
         std::cin.get(); // 대기
     }

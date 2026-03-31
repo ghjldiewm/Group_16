@@ -5,6 +5,8 @@
 #include "Player.h"
 #include "Dice.h"
 
+#include "BattleManager.h" // 전투 매니저 포함
+
 class DungeonManager
 {
 private:   
@@ -14,10 +16,11 @@ private:
     void TreasureBox(Player& player);
 
 public:
+    DungeonManager();
 
-
+    int GetcountDice() { return countDice; }
     // 이동 및 이벤트 처리
-    void MovePlayer(Player& player, DiceSystem& dice);
+    void MovePlayer(Player& player, Monster& monster, DiceSystem& dice);
 
     
 

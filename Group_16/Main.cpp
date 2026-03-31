@@ -3,7 +3,9 @@
 #include "Unit.h"
 #include "Player.h"
 #include "Monster.h"
-#include "kyunghopark.h"
+#include "MonsterList.h"
+#include "DungeonManager.h"
+
 
 int main()
 {
@@ -13,7 +15,28 @@ int main()
     Player* player = new Player(name, playerStats);
     player->PrintStatus();
 
-    kyunghopark* monster = new kyunghopark();
+    //kyunghopark* monster = new kyunghopark();
+    Monster* monster = nullptr;
+
+    DungeonManager dungeonEvent();
+
+    int count = 1;
+
+    switch (count) {
+    case 1:
+    {
+        monster = new Slime();
+        break;
+    }
+    case 2:
+        monster = new Skeleton();
+        break;
+    }
+    case 3:
+    {
+        monster = new Bat();
+    }
+
 
     player->AttackTarget(*monster);
 

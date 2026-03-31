@@ -1,5 +1,5 @@
 ﻿#include "DungeonManager.h"
-
+#include "MonsterList.h"
 
 // 최대 다이스 굴리는 횟수 고정
 // 1~6까지의 이벤트 발생 고정
@@ -65,7 +65,7 @@ void DungeonManager::TreasureBox(Player& player)
     std::cout << "상자 안에서 '두쫀쿠'를 발견했습니다!" << std::endl;
 }
 
-void DungeonManager::MovePlayer(Player& player, DiceSystem& dice)
+void DungeonManager::MovePlayer(Player& player, Monster& monster, DiceSystem& dice)
 {
     std::cout << "현재 주사위Count: " << countDice << std::endl;
    
@@ -83,18 +83,22 @@ void DungeonManager::MovePlayer(Player& player, DiceSystem& dice)
         player.GetExperience(30); //경험치 양은 추후 조절
     }
 
+    // count에 따라 다른 몬스터 + 그 안에는 스킬만 달라짐. ->skill()1,2,3
+   
     if (countDice < 3)
     {
         switch (steps)
         {
-        case 1:
-            //일반 몬스터
+        case 1: // 스킬 1
+        {
+            Slime slime;
             break;
-        case 2:
-            //쉬운 몬스터
+        }
+        case 2: // 스킬2
+            
             break;
-        case 3:
-            //쉬운 몬스터
+        case 3: // 스킬3
+            
             break;
         case 4:
             Gathering(player, dice); 
