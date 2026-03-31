@@ -16,7 +16,7 @@
 */
 
 Slime::Slime()
-    :Monster("슬라임", Stats{ 150,150,1,1,55,10,1,1,35 }) { }
+    :Monster("슬라임", Stats{ 150,150,1,1,55,1,1,1,35 }) { }
 
 void Slime::EncounterMessage()
 {
@@ -47,21 +47,21 @@ void Slime::Skill01() // ===쉬움===
         std::this_thread::sleep_for(std::chrono::milliseconds(600));
     }
 
-    std::cout << "\nC / C++에서 함수를 호출(Call)한다는 의미로 가장 알맞은 것은?" << std::endl;
-    std::cout << "1. 함수의 내용을 작성한다" << std::endl;
-    std::cout << "2. 함수 이름과 인자값을 적어서 실행되게 한다" << std::endl;
-    std::cout << "3. 함수의 반환형을 바꾼다" << std::endl;
-    std::cout << "4. 함수 이름을 주석 처리한다" << std::endl;
+    std::cout << "\n배열의 원소에 접근할 때 사용하는 연산자로 가장 알맞은 것은?" << std::endl;
+    std::cout << "1. ()" << std::endl;
+    std::cout << "2. <>" << std::endl;
+    std::cout << "3. {}" << std::endl;
+    std::cout << "4. []" << std::endl;
     std::cout << "선택: ";    
     std::cin >> Choice;
 
-    if (Choice == 2)
+    if (Choice == 4)
     {
-
+        std::cout << "맞췄을 때 이벤트" << std::endl;
     }
     else
     {
-
+        std::cout << "틀렸을 때 이벤트" << std::endl;
     }
 }
 
@@ -83,21 +83,21 @@ void Slime::Skill02() // ===중간===
         std::this_thread::sleep_for(std::chrono::milliseconds(600));
     }
 
-    std::cout << "\n다음 중 함수 오버로딩(Overloading)이 유효해지는 경우로 알맞은 것은?" << std::endl;
-    std::cout << "1. 함수 이름은 같고 매개변수 타입이 다르다" << std::endl;
-    std::cout << "2. 함수 이름은 다르고 반환형만 같다" << std::endl;
-    std::cout << "3. 함수 이름은 같고 반환형만 다르다" << std::endl;
-    std::cout << "4. 함수 이름, 매개변수, 반환형이 전부 같다" << std::endl;
+    std::cout << "\n아래 중 배열에 대한 설명으로 가장 알맞은 것은?" << std::endl;
+    std::cout << "1. 배열은 입력을 받을 수 없다" << std::endl;
+    std::cout << "2. 배열은 원소 접근이 불가능하다" << std::endl;
+    std::cout << "3. 배열은 반드시 크기가 1이어야 한다" << std::endl;
+    std::cout << "4. arr2 = arr1; 같은 배열 전체 대입은 컴파일 오류가 날 수 있다" << std::endl;
     std::cout << "선택: ";
     std::cin >> Choice;
 
-    if (Choice == 1)
+    if (Choice == 4)
     {
-
+        std::cout << "맞췄을 때 이벤트" << std::endl;
     }
     else
     {
-
+        std::cout << "틀렸을 때 이벤트" << std::endl;
     }
 }
 
@@ -119,20 +119,20 @@ void Slime::Skill03() // ===어려움===
         std::this_thread::sleep_for(std::chrono::milliseconds(600));
     }
 
-    std::cout << "\n다음 중 C++에서 반환 타입만 다른 함수 오버로딩이 불가능한 이유로 가장 알맞은 것은?" << std::endl;
-    std::cout << "1. 반환형은 무조건 void여야 한다" << std::endl;
-    std::cout << "2. C++은 함수 이름만으로만 함수를 구분한다" << std::endl;
-    std::cout << "3. 호출할 때 반환형 정보만으로 어떤 함수를 부를지 결정할 수 없어서 애매해진다" << std::endl;
-    std::cout << "4. 반환형이 다르면 무조건 템플릿을 써야 한다" << std::endl;
+    std::cout << "\n아래 중 배열 임의 접근(Random access)의 의미로 가장 알맞은 것은?" << std::endl;
+    std::cout << "1. 배열은 항상 랜덤 값으로 채워진다" << std::endl;
+    std::cout << "2. arr[2]처럼 인덱스로 한 번에 특정 위치 원소에 접근할 수 있다" << std::endl;
+    std::cout << "3. 배열은 반복문으로만 접근할 수 있다" << std::endl;
+    std::cout << "4. 배열은 주소를 저장하는 자료구조다" << std::endl;
     std::cout << "선택: ";
     std::cin >> Choice;
 
-    if (Choice == 3)
+    if (Choice == 2)
     {
-
+        std::cout << "맞췄을 때 이벤트" << std::endl;
     }
     else
     {
-
+        std::cout << "틀렸을 때 이벤트" << std::endl;
     }
 }
