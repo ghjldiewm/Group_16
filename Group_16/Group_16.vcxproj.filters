@@ -176,5 +176,8 @@
     <ClInclude Include="Craft.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="ICraftworkshop.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

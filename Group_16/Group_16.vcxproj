@@ -153,6 +153,7 @@
     <ClInclude Include="CraftUI.h" />
     <ClInclude Include="Dice.h" />
     <ClInclude Include="DungeonManager.h" />
+    <ClInclude Include="ICraftworkshop.h" />
     <ClInclude Include="Inventory.h" />
     <ClInclude Include="Item.h" />
     <ClInclude Include="ItemList.h" />
