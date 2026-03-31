@@ -13,7 +13,7 @@ public:
 
     int GetItemCount(int id)const;
     bool HasItem(int id, int count)const;
-
+    bool IsEmpty() const;
     void PrintAllItems(const ItemList& itemlist) const;
 private:
     std::map<int, int> items;

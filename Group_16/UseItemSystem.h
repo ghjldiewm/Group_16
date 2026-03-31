@@ -6,6 +6,7 @@
 
 class UseItemSystem
 {
+public:
     void Useitemsystem(Player& player, Inventory& inventory, ItemList& itemlist, int id, int count)
     {
     if (inventory.GetItemCount(id) < count)

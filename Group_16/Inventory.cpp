@@ -50,3 +50,7 @@ void Inventory::PrintAllItems(const ItemList& itemlist) const
         std::cout << item->getItemname() << ":" << count<< std::endl;
     }
 }
+bool Inventory::IsEmpty() const
+{
+    return items.empty();
+}
