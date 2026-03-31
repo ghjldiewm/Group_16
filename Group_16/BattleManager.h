@@ -3,12 +3,13 @@
 #include "Monster.h"
 #include "UIManager.h"
 #include <chrono>
+#include <windows.h>
 
 class BattleManager {
 public:
     // 전투 시작 함수: 플레이어와 몬스터를 받습니다.
     void StartBattle(Player& player, Monster& monster, UIManager& ui) {
-        std::cout << " " << monster.GetName() << "와(과) 전투를 시작합니다!" << std::endl;
+        std::cout << " " << monster.GetName() << "(이)가 나타났다!" << std::endl;
 
         while (!player.IsDead() && !monster.IsDead()) {
             // 1. 화면 그리기 (UIManager 활용)
@@ -20,6 +21,9 @@ public:
 
             // 3. 몬스터 턴
             ProcessMonsterTurn(player, monster);
+
+
+
         }
 
         // 4. 결과 처리
@@ -35,14 +39,14 @@ public:
         {
             std::cout << '.' << " ";
             std::cout.flush();
-            std::this_thread::sleep_for(std::chrono::milliseconds(2000));
+            std::this_thread::sleep_for(std::chrono::milliseconds(1000));
         }
 
     }
 
 private:
     void ProcessPlayerTurn(Player& player, Monster& monster) {
-        std::cout << "\n[플레이어의 턴] 1.공격  2.도망 : ";
+        std::cout << "\n[플레이어의 턴] 1.공격  2.아이템 : ";
         int choice;
         std::cin >> choice;
 
@@ -50,7 +54,7 @@ private:
             player.AttackTarget(monster); // 다이어그램의 AttackTarget 사용
         }
         else if (choice == 2) {
-            // Run!
+            // Run![미구현]
         }
     }
 
@@ -59,4 +63,3 @@ private:
         monster.AttackTarget(player);
     }
 };
-#pragma once

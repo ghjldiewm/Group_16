@@ -31,13 +31,13 @@ void Sphinx::EncounterMessage()
 
 void Sphinx::Skill01()
 {
-    int Choice;
-    std::cout << Name << " 이(가) 스킹을 사용했다! " << std::endl;
-    std::this_thread::sleep_for(std::chrono::milliseconds(1200));
-    std::cout << " 
-    std::cout << " 
-    std::cout << " 
-    std::cout << " 
-    std::cout << " 
-    std::cout << " 
+    //int Choice;
+    //std::cout << Name << " 이(가) 스킹을 사용했다! " << std::endl;
+    //std::this_thread::sleep_for(std::chrono::milliseconds(1200));
+    //std::cout << " 
+    //std::cout << " 
+    //std::cout << " 
+    //std::cout << " 
+    //std::cout << " 
+    //std::cout << " 
 }

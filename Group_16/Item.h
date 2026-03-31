@@ -7,6 +7,7 @@ class Player;
 class Item
 {
 public:
+    Item() : ID(0), Itemname("None"), Value(0) {}
     Item(int id, const std::string& name, int value) : ID(id), Itemname(name), Value(value) {}
 
     virtual ~Item() = default;

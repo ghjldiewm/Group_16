@@ -29,7 +29,6 @@ DungeonManager::DungeonManager(UIManager& ui) {
     ui.DrawTitleScreen(); // 필요할 때 화면 그리기
 }
 
-
 void DungeonManager::Gathering(Player& player, DiceSystem& dice)
 {
     std::cout << "채집을 하러 뒷산에 왔습니다." << std::endl;
@@ -38,10 +37,14 @@ void DungeonManager::Gathering(Player& player, DiceSystem& dice)
     if (result <= 3)
     {
         //잡템 
+        player.GetInventory()->AddItem(1, 100);
+        std::cout << "돈 100원을 얻었습니다." << std::endl;
     }
     else
     {
         //쓸만한템
+        player.GetInventory()->AddItem(1, 300);
+        std::cout << "돈 300원을 얻었습니다." << std::endl;
     }
 
 }
@@ -87,49 +90,6 @@ void DungeonManager::MovePlayer(Player& player, Monster*& monster, DiceSystem& d
         player.GetExperience(30); //경험치 양은 추후 조절
     }
 
-    // count에 따라 다른 몬스터 + 그 안에는 스킬만 달라짐. ->skill()1,2,3
-    switch (countDice) {
-    case 1:
-    {
-        monster = new Slime();
-        break;
-    }
-    case 2:
-    {
-        monster = new Skeleton();
-        break;
-    }
-    case 3:
-    {
-        monster = new Bat();
-        break;
-    }
-    case 4:
-    {
-        monster = new Wolf();
-        break;
-    }
-    case 5:
-    {
-        monster = new Spider();
-        break;
-    }
-    case 6:
-    {
-        monster = new Zombie();
-        break;
-    }
-    case 7:
-    {
-        monster = new Orc();
-        break;
-    }
-    case 8:
-    {
-        monster = new Dragon();
-        break;
-    }
-    }
 
     if (countDice < 3)
     {

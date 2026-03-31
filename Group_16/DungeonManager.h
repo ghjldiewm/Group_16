@@ -11,9 +11,7 @@ class DungeonManager
 {
 private:   
     int countDice = 0;       // 다이스 던진 총 횟수
-    void Gathering(Player& player, DiceSystem& dice);
-    void StatsBoost(Player& player);
-    void TreasureBox(Player& player);
+
 
 public:
     DungeonManager(UIManager& ui);
@@ -22,6 +20,8 @@ public:
     // 이동 및 이벤트 처리
     void MovePlayer(Player& player, Monster*& monster, DiceSystem& dice, UIManager& ui);
 
-    
+    void Gathering(Player& player, DiceSystem& dice);
+    void StatsBoost(Player& player);
+    void TreasureBox(Player& player);
 
 };

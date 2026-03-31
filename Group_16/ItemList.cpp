@@ -5,7 +5,6 @@ void ItemList::GetItemList()
     Itemlist[1] = Item(1, "돈", 1);
     Itemlist[2] = Item(2, "HP포션", 50);
     
-   
 }
 const Item* ItemList::getItemID(int ID) const
 {

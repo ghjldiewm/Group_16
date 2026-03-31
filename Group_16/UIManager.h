@@ -59,7 +59,7 @@ public:
 
     // 2. 전투 UI 출력 함수 (플레이어/몬스터 스탯창)
     void DrawBattleUI(Player& player, Monster& monster) {
-        system("cls");
+        //system("cls");
         SetColor(15); // 밝은 흰색
 
         // 상단 테두리
@@ -77,9 +77,13 @@ public:
         std::cout << " HP: " << player.GetHP() << "/" << player.GetMaxHP();
         std::cout << "                 HP: " << monster.GetHP() << "/" << monster.GetMaxHP() << std::endl;
 
+        if (monster.GetHP() <= 0) {
+            monster.Skill01();
+        }
+
         // 하단 테두리 및 명령어 메뉴
         std::cout << "==================================================================" << std::endl;
-        std::cout << " [1] 공격  [2] 스킬  [3] 도망" << std::endl;
+        std::cout << " [1] 공격  [2] 아이템" << std::endl;
         std::cout << "------------------------------------------------------------------" << std::endl;
     }
 };
