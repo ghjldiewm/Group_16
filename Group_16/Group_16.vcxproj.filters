@@ -218,5 +218,11 @@
     <ClInclude Include="BattleManager.h">
       <Filter>Header Files\Manager</Filter>
     </ClInclude>
+    <ClInclude Include="UseItemSystem.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="UseItem.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

@@ -1,19 +1,28 @@
 ﻿#pragma once
 #include <iostream>
 #include <string>
-#include "Item.h"
+#include "UseItem.h"
+#include "Player.h"
 
-class HpPotion : public Item
+class HPPotion : public UseItem
 {
 public:
-    HpPotion(int amount) : Item(1, "체력 회복 포션", 50), healAmount(amount) {}
+    HPPotion()
+        :UseItem(2, "HP 포션", 50)
+    {}
+    void Use(Player& player) const override
+    {
+        int newHP = player.GetHP() + getValue();
 
-    void UseHP() const {
-        std::cout << "[사용] " << getItemname() << ": HP를 " << healAmount << "만큼 회복합니다!\n";
+        if (newHP > player.GetMaxHP())
+        {
+            newHP = player.GetMaxHP();
+        }
+
+        player.SetHP(newHP);
+
+        std::cout << "[사용] " << getItemname() << ": MP를 " << getValue() << "만큼 회복합니다!\n";
     }
-
-private:
-    int healAmount;
 };
 
 class MpPotion : public Item

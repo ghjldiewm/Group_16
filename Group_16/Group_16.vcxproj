@@ -187,6 +187,8 @@
     <ClInclude Include="Transaction.h" />
     <ClInclude Include="UIManager.h" />
     <ClInclude Include="Unit.h" />
+    <ClInclude Include="UseItem.h" />
+    <ClInclude Include="UseItemSystem.h" />
     <ClInclude Include="Weapon.h" />
     <ClInclude Include="Wolf.h" />
     <ClInclude Include="Zombie.h" />
