@@ -21,31 +21,68 @@ public:
 
         player.SetHP(newHP);
 
+        std::cout << "[사용] " << getItemname() << ": HP를 " << getValue() << "만큼 회복합니다!\n";
+    }
+};
+
+class MPPotion : public UseItem
+{
+public:
+    MPPotion()
+        :UseItem(3, "MP 포션", 50)
+    {}
+    void Use(Player& player) const override
+    {
+        int newMP = player.GetMP() + getValue();
+
+        if (newMP > player.GetMaxMP())
+        {
+            newMP = player.GetMaxMP();
+        }
+
+        player.SetMP(newMP);
+
         std::cout << "[사용] " << getItemname() << ": MP를 " << getValue() << "만큼 회복합니다!\n";
     }
 };
 
-class MpPotion : public Item
-{
+class AttackPotion : public UseItem {
 public:
-    MpPotion(int amount) : Item(2, "마나 회복 포션", 50), manaAmount(amount) {}
+    AttackPotion()
+        :UseItem(4, "강화 포션", 20)
+    {}
+    void Use(Player& player) const override
+    {
+        int newAtk = player.GetAttack() + getValue();
 
-    void UseMP() const {
-        std::cout << "[사용] " << getItemname() << ": MP를 " << manaAmount << "만큼 회복합니다!\n";
+        if (newAtk > player.GetAttack())
+        {
+            newAtk = player.GetAttack();
+        }
+
+        player.SetAttack(newAtk);
+
+        std::cout << "[사용] " << getItemname() << ": 공격력이 " << getValue() << "만큼 상승합니다!\n";
     }
-
-private:
-    int manaAmount;
 };
 
-class AttackPotion : public Item {
+class CriticalPotion : public UseItem {
 public:
-    AttackPotion(int power) : Item(3, "강화 포션", 50), atkPower(power) {}
+    CriticalPotion()
+        : UseItem(5, "치명타 포션", 10)
+    {}
+    void Use(Player& player) const override
+    {
+        int newCrit = player.GetCrit() + getValue();
 
-    void UseBuff() const {
-        std::cout << "[사용] " << getItemname() << ": 공격력이 " << atkPower << "만큼 상승합니다!\n";
+        if (newCrit = player.GetCrit())
+        {
+            newCrit = player.GetCrit();
+        }
+
+        player.SetCrit(newCrit);
+
+        std::cout << "[사용] " << getItemname() << "을(를) 마셨습니다. 치명타 확률이 "
+            << getValue() << "% 증가합니다!\n";
     }
-
-private:
-    int atkPower;
 };

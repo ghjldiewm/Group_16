@@ -1,32 +1,60 @@
 ﻿#pragma once
 #include <iostream>
-#include <string.h>
-#include "Item.h"
+#include <string>
+#include "UseItem.h"
 
-class Twig : public Item {
+class Twig : public UseItem {
 public:
-    Twig(int count) : Item(6, "나뭇가지", 1), m_count(count) {}
-
-    int GetCount() const { return m_count; }
-private:
-    int m_count;
+    Twig()
+        : UseItem(101, "나뭇가지", 1)
+    {}
 };
 
-class Stone : public Item {
+class Stone : public UseItem {
 public:
-    Stone(int quality) : Item(7, "단단한 돌", 2), m_quality(quality) {}
-private:
-    int m_quality;
+    Stone()
+        : UseItem(102, "단단한 돌", 1)
+    {}
 };
 
-class Leaf : public Item {
+class Leaf : public UseItem {
 public:
-    Leaf() : Item(8, "커다란 나뭇잎", 1) {}
+    Leaf()
+        : UseItem(103, "커다란 나뭇잎", 1)
+    {}
 };
 
-class Herb : public Item {
+class Herb : public UseItem {
 public:
-    Herb(std::string color) : Item(9, "약초", 10), m_color(color) {}
-private:
-    std::string m_color;
+    Herb()
+        : UseItem(104, "약초", 1)
+    {}
+};
+
+class SpiderWeb : public UseItem {
+public:
+    SpiderWeb()
+        : UseItem(105, "끈적이는 거미줄", 1)
+    {}
+};
+
+class Feather : public UseItem {
+public:
+    Feather()
+        : UseItem(106, "깃털", 1)
+    {}
+};
+
+class SlimeOoze : public UseItem {
+public:
+    SlimeOoze()
+        : UseItem(107, "슬라임 점액", 1)
+    {}
+};
+
+class BatTooth : public UseItem {
+public:
+    BatTooth()
+        : UseItem(108, "박쥐 이빨", 1)
+    {}
 };
