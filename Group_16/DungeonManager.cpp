@@ -25,6 +25,10 @@
 // 주사위 굴린 만큼의 난이도 상승(조절)
 // 상점 -> 시세에 따라..?
 // 할인 이벤트
+DungeonManager::DungeonManager(UIManager& ui) {
+    ui.DrawTitleScreen(); // 필요할 때 화면 그리기
+}
+
 
 void DungeonManager::Gathering(Player& player, DiceSystem& dice)
 {
@@ -65,7 +69,7 @@ void DungeonManager::TreasureBox(Player& player)
     std::cout << "상자 안에서 '두쫀쿠'를 발견했습니다!" << std::endl;
 }
 
-void DungeonManager::MovePlayer(Player& player, Monster& monster, DiceSystem& dice)
+void DungeonManager::MovePlayer(Player& player, Monster*& monster, DiceSystem& dice, UIManager& ui)
 {
     std::cout << "현재 주사위Count: " << countDice << std::endl;
    
@@ -84,14 +88,55 @@ void DungeonManager::MovePlayer(Player& player, Monster& monster, DiceSystem& di
     }
 
     // count에 따라 다른 몬스터 + 그 안에는 스킬만 달라짐. ->skill()1,2,3
-   
+    switch (countDice) {
+    case 1:
+    {
+        monster = new Slime();
+        break;
+    }
+    case 2:
+    {
+        monster = new Skeleton();
+        break;
+    }
+    case 3:
+    {
+        monster = new Bat();
+        break;
+    }
+    case 4:
+    {
+        monster = new Wolf();
+        break;
+    }
+    case 5:
+    {
+        monster = new Spider();
+        break;
+    }
+    case 6:
+    {
+        monster = new Zombie();
+        break;
+    }
+    case 7:
+    {
+        monster = new Orc();
+        break;
+    }
+    case 8:
+    {
+        monster = new Dragon();
+        break;
+    }
+    }
+
     if (countDice < 3)
     {
         switch (steps)
         {
         case 1: // 스킬 1
         {
-            Slime slime;
             break;
         }
         case 2: // 스킬2

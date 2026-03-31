@@ -16,25 +16,11 @@ int main()
 
     //kyunghopark* monster = new kyunghopark();
     Monster* monster = nullptr;
+    UIManager ui;
+
 
     DungeonManager dungeonEvent(ui);
 
-    int count = 1;
-
-    switch (count) {
-    case 1:
-    {
-        monster = new Slime();
-        break;
-    }
-    case 2:
-        monster = new Skeleton();
-        break;
-    }
-    case 3:
-    {
-        monster = new Bat();
-    }
 
 
     player->AttackTarget(*monster);

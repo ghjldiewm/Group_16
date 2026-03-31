@@ -16,11 +16,11 @@ private:
     void TreasureBox(Player& player);
 
 public:
-    DungeonManager();
+    DungeonManager(UIManager& ui);
 
     int GetcountDice() { return countDice; }
     // 이동 및 이벤트 처리
-    void MovePlayer(Player& player, Monster& monster, DiceSystem& dice);
+    void MovePlayer(Player& player, Monster*& monster, DiceSystem& dice, UIManager& ui);
 
     
 

@@ -9,3 +9,4 @@
 #include "Sphinx.h"
 #include "Wolf.h"
 #include "Zombie.h"
+#include "Spider.h"
