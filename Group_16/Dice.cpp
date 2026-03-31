@@ -33,7 +33,7 @@ int DiceSystem::ThrowDice()
         }
         else if (Input == 'q')
         {
-            break;
+            return 0;
         }
         else
         {
