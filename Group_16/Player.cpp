@@ -1,7 +1,8 @@
 ﻿#include "Player.h"
 
-Player::Player(std::string name, Stats stats)
-    :Unit(name, stats)
+Player::Player(std::string name, Stats stats, Inventory* inventory)
+    :Unit(name, stats),
+    inventory(inventory)
 {
     Name = name;
 }

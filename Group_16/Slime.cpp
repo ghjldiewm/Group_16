@@ -16,7 +16,7 @@
 */
 
 Slime::Slime()
-    :Monster("슬라임", Stats{ 150,150,1,1,55,1,1,1,35 }) { }
+    :Monster("슬라임", Stats{ 150,150,1,1,55,0,1,1,35 }) { }
 
 void Slime::EncounterMessage()
 {
@@ -27,6 +27,11 @@ void Slime::EncounterMessage()
         std::this_thread::sleep_for(std::chrono::milliseconds(400));
     }
     std::cout << "\n누군가에게 저주받은 스타터 슬라임과 조우하였다!" << std::endl;
+    std::this_thread::sleep_for(std::chrono::milliseconds(1000));
+    std::cout << "『                       " << std::endl;
+    std::cout << "     \"으...어어...\"    " << std::endl;
+    std::cout << "                       』" << std::endl;
+    std::this_thread::sleep_for(std::chrono::milliseconds(1000));
 }
 
 void Slime::Skill01() // ===쉬움===

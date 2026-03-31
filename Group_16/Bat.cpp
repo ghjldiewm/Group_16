@@ -20,7 +20,18 @@ Bat::Bat()
 
 void Bat::EncounterMessage()
 {
+    for (int i = 0; i < 3; ++i)
+    {
+        std::cout << '.' << " ";
+        std::cout.flush();
+        std::this_thread::sleep_for(std::chrono::milliseconds(400));
+    }
     std::cout << "누군가의 애완박쥐와 조우했다! 마스터 클래스의 누군가를 닮은 것 같다." << std::endl;
+    std::this_thread::sleep_for(std::chrono::milliseconds(1000));
+    std::cout << "『                       " << std::endl;
+    std::cout << "     \"...........\"    " << std::endl;
+    std::cout << "                       』" << std::endl;
+    std::this_thread::sleep_for(std::chrono::milliseconds(1000));
 }
 
 void Bat::Skill01()
@@ -29,7 +40,7 @@ void Bat::Skill01()
     std::cout << Name << "이(가) 스킬을 사용했다!" << std::endl;
     std::this_thread::sleep_for(std::chrono::milliseconds(1200));
     std::cout << "『                       " << std::endl;
-    std::cout << "     \"으...어어...\"    " << std::endl;
+    std::cout << "     \"...!!!!....\"    " << std::endl;
     std::cout << "                       』" << std::endl;
     std::this_thread::sleep_for(std::chrono::milliseconds(1200));
     std::cout << Name << "이(가) 전생의 기억을 떠올립니다.." << std::endl;
@@ -65,7 +76,7 @@ void Bat::Skill02()
     std::cout << Name << "이(가) 스킬을 사용했다!" << std::endl;
     std::this_thread::sleep_for(std::chrono::milliseconds(1200));
     std::cout << "『                       " << std::endl;
-    std::cout << "     \"으...어어...\"    " << std::endl;
+    std::cout << "     \"...!!!!....\"    " << std::endl;
     std::cout << "                       』" << std::endl;
     std::this_thread::sleep_for(std::chrono::milliseconds(1200));
     std::cout << Name << "이(가) 전생의 기억을 떠올립니다.." << std::endl;
@@ -101,7 +112,7 @@ void Bat::Skill03()
     std::cout << Name << "이(가) 스킬을 사용했다!" << std::endl;
     std::this_thread::sleep_for(std::chrono::milliseconds(1200));
     std::cout << "『                       " << std::endl;
-    std::cout << "     \"으...어어...\"    " << std::endl;
+    std::cout << "     \"...!!!!....\"    " << std::endl;
     std::cout << "                       』" << std::endl;
     std::this_thread::sleep_for(std::chrono::milliseconds(1200));
     std::cout << Name << "이(가) 전생의 기억을 떠올립니다.." << std::endl;

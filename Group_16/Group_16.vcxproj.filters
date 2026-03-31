@@ -19,6 +19,9 @@
     <Filter Include="Header Files\MONSTER.h">
       <UniqueIdentifier>{b4652234-08de-41b8-9653-060d20cea683}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\Manager">
+      <UniqueIdentifier>{65473f73-616d-4abc-a16a-a0da9fbf13c1}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
@@ -209,10 +212,20 @@
     <ClInclude Include="Orc.h">
       <Filter>Header Files\MONSTER.h</Filter>
     </ClInclude>
-  </ItemGroup>
-  <ItemGroup>
-    <ResourceCompile Include="Group_16.rc">
-      <Filter>Resource Files</Filter>
-    </ResourceCompile>
+    <ClInclude Include="UIManager.h">
+      <Filter>Header Files\Manager</Filter>
+    </ClInclude>
+    <ClInclude Include="BattleManager.h">
+      <Filter>Header Files\Manager</Filter>
+    </ClInclude>
+    <ClInclude Include="UseItemSystem.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="UseItem.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="MonsterList.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

@@ -1,5 +1,5 @@
 ﻿#include "DungeonManager.h"
-
+#include "MonsterList.h"
 
 // 최대 다이스 굴리는 횟수 고정
 // 1~6까지의 이벤트 발생 고정
@@ -25,6 +25,9 @@
 // 주사위 굴린 만큼의 난이도 상승(조절)
 // 상점 -> 시세에 따라..?
 // 할인 이벤트
+DungeonManager::DungeonManager(UIManager& ui) {
+    ui.DrawTitleScreen(); // 필요할 때 화면 그리기
+}
 
 void DungeonManager::Gathering(Player& player, DiceSystem& dice)
 {
@@ -34,10 +37,14 @@ void DungeonManager::Gathering(Player& player, DiceSystem& dice)
     if (result <= 3)
     {
         //잡템 
+        player.GetInventory()->AddItem(1, 100);
+        std::cout << "돈 100원을 얻었습니다." << std::endl;
     }
     else
     {
         //쓸만한템
+        player.GetInventory()->AddItem(1, 300);
+        std::cout << "돈 300원을 얻었습니다." << std::endl;
     }
 
 }
@@ -46,9 +53,8 @@ void DungeonManager::StatsBoost(Player& player)
 {
     std::cout << "코딩신의 가호를 받아 능력치가 상승했습니다!" << std::endl;
 
-    /*player.Status.Attack += 10;
-    player.Defense += 10;*/ 
-    //스텟상승 어떻게 시킵니까??
+    player.AddAttack(10);
+    player.AddDefense(10);
 
     void PrintStatus(); //이건 왜 작동 안하지..
 }
@@ -66,7 +72,7 @@ void DungeonManager::TreasureBox(Player& player)
     std::cout << "상자 안에서 '두쫀쿠'를 발견했습니다!" << std::endl;
 }
 
-void DungeonManager::MovePlayer(Player& player, DiceSystem& dice)
+void DungeonManager::MovePlayer(Player& player, Monster*& monster, DiceSystem& dice, UIManager& ui)
 {
     std::cout << "현재 주사위Count: " << countDice << std::endl;
    
@@ -84,18 +90,20 @@ void DungeonManager::MovePlayer(Player& player, DiceSystem& dice)
         player.GetExperience(30); //경험치 양은 추후 조절
     }
 
+
     if (countDice < 3)
     {
         switch (steps)
         {
-        case 1:
-            //일반 몬스터
+        case 1: // 스킬 1
+        {
             break;
-        case 2:
-            //쉬운 몬스터
+        }
+        case 2: // 스킬2
+            
             break;
-        case 3:
-            //쉬운 몬스터
+        case 3: // 스킬3
+            
             break;
         case 4:
             Gathering(player, dice); 

@@ -1,42 +1,88 @@
 ﻿#pragma once
 #include <iostream>
 #include <string>
-#include "Item.h"
+#include "UseItem.h"
+#include "Player.h"
 
-class HpPotion : public Item
+class HPPotion : public UseItem
 {
 public:
-    HpPotion(int amount) : Item(1, "체력 회복 포션", 50), healAmount(amount) {}
+    HPPotion()
+        :UseItem(2, "HP 포션", 50)
+    {}
+    void Use(Player& player) const override
+    {
+        int newHP = player.GetHP() + getValue();
 
-    void UseHP() const {
-        std::cout << "[사용] " << getItemname() << ": HP를 " << healAmount << "만큼 회복합니다!\n";
+        if (newHP > player.GetMaxHP())
+        {
+            newHP = player.GetMaxHP();
+        }
+
+        player.SetHP(newHP);
+
+        std::cout << "[사용] " << getItemname() << ": HP를 " << getValue() << "만큼 회복합니다!\n";
     }
-
-private:
-    int healAmount;
 };
 
-class MpPotion : public Item
+class MPPotion : public UseItem
 {
 public:
-    MpPotion(int amount) : Item(2, "마나 회복 포션", 50), manaAmount(amount) {}
+    MPPotion()
+        :UseItem(3, "MP 포션", 50)
+    {}
+    void Use(Player& player) const override
+    {
+        int newMP = player.GetMP() + getValue();
 
-    void UseMP() const {
-        std::cout << "[사용] " << getItemname() << ": MP를 " << manaAmount << "만큼 회복합니다!\n";
+        if (newMP > player.GetMaxMP())
+        {
+            newMP = player.GetMaxMP();
+        }
+
+        player.SetMP(newMP);
+
+        std::cout << "[사용] " << getItemname() << ": MP를 " << getValue() << "만큼 회복합니다!\n";
     }
-
-private:
-    int manaAmount;
 };
 
-class AttackPotion : public Item {
+class AttackPotion : public UseItem {
 public:
-    AttackPotion(int power) : Item(3, "강화 포션", 50), atkPower(power) {}
+    AttackPotion()
+        :UseItem(4, "강화 포션", 20)
+    {}
+    void Use(Player& player) const override
+    {
+        int newAtk = player.GetAttack() + getValue();
 
-    void UseBuff() const {
-        std::cout << "[사용] " << getItemname() << ": 공격력이 " << atkPower << "만큼 상승합니다!\n";
+        if (newAtk > player.GetAttack())
+        {
+            newAtk = player.GetAttack();
+        }
+
+        player.SetAttack(newAtk);
+
+        std::cout << "[사용] " << getItemname() << ": 공격력이 " << getValue() << "만큼 상승합니다!\n";
     }
+};
 
-private:
-    int atkPower;
+class CriticalPotion : public UseItem {
+public:
+    CriticalPotion()
+        : UseItem(5, "치명타 포션", 10)
+    {}
+    void Use(Player& player) const override
+    {
+        int newCrit = player.GetCrit() + getValue();
+
+        if (newCrit = player.GetCrit())
+        {
+            newCrit = player.GetCrit();
+        }
+
+        player.SetCrit(newCrit);
+
+        std::cout << "[사용] " << getItemname() << "을(를) 마셨습니다. 치명타 확률이 "
+            << getValue() << "% 증가합니다!\n";
+    }
 };
