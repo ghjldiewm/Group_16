@@ -170,6 +170,7 @@
     <ClInclude Include="Goblin.h" />
     <ClInclude Include="kyunghopark.h" />
     <ClInclude Include="Monster.h" />
+    <ClInclude Include="MonsterList.h" />
     <ClInclude Include="Orc.h" />
     <ClInclude Include="Player.h" />
     <ClInclude Include="Potion.h" />

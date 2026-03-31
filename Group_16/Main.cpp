@@ -6,7 +6,6 @@
 #include "MonsterList.h"
 #include "DungeonManager.h"
 
-
 int main()
 {
     std::string name = "홍길동";
@@ -18,7 +17,7 @@ int main()
     //kyunghopark* monster = new kyunghopark();
     Monster* monster = nullptr;
 
-    DungeonManager dungeonEvent();
+    DungeonManager dungeonEvent(ui);
 
     int count = 1;
 
