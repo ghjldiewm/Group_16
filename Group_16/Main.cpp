@@ -131,6 +131,7 @@ int main()
     }
 
     monster = new Sphinx();
+    monster->EncounterMessage();
     monster->Skill01();
 
     while (countDice < 7) {

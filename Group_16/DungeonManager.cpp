@@ -67,10 +67,10 @@ void DungeonManager::StatsBoost(Player& player)
     //std::cout << "코딩신의 가호를 받아 능력치가 상승했습니다!" << std::endl;
     TypeMessage("코딩신의 가호를 받아 능력치가 상승했습니다!");
 
-    player.AddAttack(10);
-    player.AddDefense(10);
+    player.AddAttack(5);
+    player.AddDefense(5);
 
-    TypeMessage("공격력 +10 / 방어력 +10");
+    TypeMessage("공격력 +5 / 방어력 +5");
     player.PrintStatus(); 
 
 }

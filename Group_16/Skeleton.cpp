@@ -16,7 +16,7 @@
 */
 
 Skeleton::Skeleton()
-    :Monster("스켈레톤", Stats{ 90,90,1,1,40,10,1,1,35 }) { }
+    :Monster("스켈레톤", Stats{ 90,90,1,1,50,10,1,1,35 }) { }
 
 void Skeleton::EncounterMessage()
 {
