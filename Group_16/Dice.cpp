@@ -4,7 +4,10 @@ DiceSystem::DiceSystem()
 //랜덤시드에서 가져온 수를 1~6 범위내로 균일 확률로 배치
 int DiceSystem::RollDice()
 {
+    std::cout << "\n\n==================================================================\n" << std::endl;
     std::cout << "[주사위를 던지는 중...]" << std::endl;
+    std::cout << "\n\==================================================================\n\n" << std::endl;
+
 
     for (int i = 0; i < 5; ++i)
     {
@@ -23,7 +26,9 @@ int DiceSystem::ThrowDice()
     char Input;
     while (1)
     {
+        std::cout << "\n\n==================================================================\n" << std::endl;
         std::cout << "주사위를 굴리려면 r을 입력하세요!['q'를 눌러 종료]" << std::endl;
+        std::cout << "\n==================================================================\n\n" << std::endl;
         std::cin >> Input;
 
         if (Input == 'r')
@@ -37,7 +42,7 @@ int DiceSystem::ThrowDice()
         }
         else
         {
-            std::cout << "잘못된 입력입니다." << std::endl;
+            std::cout << "\n*********************잘못된 입력입니다.*********************\n" << std::endl;
         }
     }
 }

@@ -19,14 +19,18 @@ void Unit::TakeDamage(int damage)
 {
     Status.HP -= damage;
 
+
+    std::cout << "\n\n==================================================================\n" << std::endl;
     std::cout << "' " << Name << " '" << "(이)가 " << damage << "의 피해를 입었습니다." << std::endl;
 
     if (IsDead())
     {
+        std::cout << "\n\n==================================================================\n" << std::endl;
         std::cout << "' " << Name << " '" << "(이)가 쓰러졌습니다." << std::endl;
     }
     else
     {
+        std::cout << "\n\n==================================================================\n" << std::endl;
         std::cout << "적 " << Name <<"의 남은 체력: " << Status.HP << "남았습니다." << std::endl;
     }
 }

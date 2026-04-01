@@ -37,7 +37,7 @@ int main()
     // 상점..?
     while (countDice < 4) {
 
-
+        std::cout << "\n\n==================================================================\n" << std::endl;
         std::cout << "현재 주사위Count: " << countDice << std::endl;
         std::cout << "선택지: [1] 다이스 굴리기 / [2] 상태창 / [3] 인벤토리" << countDice << std::endl;
         std::cout << "입력: ";
