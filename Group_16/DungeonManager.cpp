@@ -56,7 +56,7 @@ void DungeonManager::StatsBoost(Player& player)
     player.AddAttack(10);
     player.AddDefense(10);
 
-    void PrintStatus(); //이건 왜 작동 안하지..
+    player.PrintStatus();
 }
 
 void DungeonManager::TreasureBox(Player& player)
