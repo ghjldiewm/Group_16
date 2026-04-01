@@ -2,7 +2,6 @@
 #include <iostream>
 #include <string>
 #include "Stats.h"
-#include "StatsPatch.h"
 
 class Unit
 {

@@ -8,15 +8,22 @@
 
 int main()
 {
-    std::string name = "홍길동";
+    std::string name;
+    std::cout << "당신의 이름을 알려주세요: ";
+    std::cin >> name;
+    
     Stats playerStats;
     Inventory* inventory = new Inventory;
+
+
     Player* player = new Player(name, playerStats, inventory);
     player->PrintStatus();
     Monster* monster = nullptr;
 
     ItemList itemlist;
     itemlist.GetItemList();
+
+    player->GetInventory()->AddItem(1, 100);
 
     UIManager ui;
     //ui.DrawTitleScreen();
@@ -34,14 +41,22 @@ int main()
 
     int choice = 0;
 
+
     // 상점..?
     while (countDice < 4) {
 
         std::cout << "\n\n==================================================================\n" << std::endl;
         std::cout << "현재 주사위Count: " << countDice << std::endl;
-        std::cout << "선택지: [1] 다이스 굴리기 / [2] 상태창 / [3] 인벤토리" << countDice << std::endl;
+        std::cout << "선택지: [1] 다이스 굴리기 / [2] 상태창 / [3] 인벤토리" << std::endl;
         std::cout << "입력: ";
         std::cin >> choice;
+
+        if (std::cin.fail()) {
+            std::cin.clear();
+            std::cin.ignore(100, '\n');  //최대 100글자 비우기
+            std::cout << "잘못된 입력입니다!" << std::endl;
+            continue;
+        }
 
         switch (choice) {
         case 1:
@@ -91,6 +106,11 @@ int main()
                 break;
             }
 
+            if (player->IsDead())
+            {
+                return 0;
+            }
+
             player->GetExperience(40);
             break;
         }
@@ -102,12 +122,16 @@ int main()
         case 3:
         {
             player->GetInventory()->PrintAllItems(itemlist);
+
+
             break;
         }
         }
 
     }
 
+    monster = new Sphinx();
+    monster->Skill01();
 
     while (countDice < 7) {
 
@@ -116,6 +140,13 @@ int main()
         std::cout << "선택지: [1] 다이스 굴리기 / [2] 상태창 / [3] 인벤토리" << countDice << std::endl;
         std::cout << "입력: ";
         std::cin >> choice;
+
+        if (std::cin.fail()) {
+            std::cin.clear();
+            std::cin.ignore(100, '\n');  //최대 100글자 비우기
+            std::cout << "잘못된 입력입니다!" << std::endl;
+            continue;
+        }
 
         switch (choice) {
         case 1:
@@ -165,6 +196,11 @@ int main()
                 break;
             }
 
+            if (player->IsDead())
+            {
+                return 0;
+            }
+
             player->GetExperience(40);
             break;
         }
@@ -182,6 +218,9 @@ int main()
 
     }
 
+    monster = new Sphinx();
+    monster->Skill02();
+    monster->Skill03();
 
     while (countDice < 10) {
 
@@ -190,6 +229,13 @@ int main()
         std::cout << "선택지: [1] 다이스 굴리기 / [2] 상태창 / [3] 인벤토리" << countDice << std::endl;
         std::cout << "입력: ";
         std::cin >> choice;
+
+        if (std::cin.fail()) {
+            std::cin.clear();
+            std::cin.ignore(100, '\n');  //최대 100글자 비우기
+            std::cout << "잘못된 입력입니다!" << std::endl;
+            continue;
+        }
 
         switch (choice) {
         case 1:
@@ -239,6 +285,11 @@ int main()
                 break;
             }
 
+            if (player->IsDead())
+            {
+                return 0;
+            }
+
             player->GetExperience(40);
             break;
         }
@@ -256,7 +307,15 @@ int main()
 
     }
 
+
+    monster = new Sphinx();
+    monster->Skill04();
+
     // [Fix] 마지막 - 보스(박경호 튜토님) 출현 구현
+    monster = new kyunghopark();
+    bm.BossBattle(*player, *monster, ui, *inventory); 
+
+
 
 
     //player->AttackTarget(*monster);

@@ -26,7 +26,9 @@ void Zombie::EncounterMessage()
         std::cout.flush();
         std::this_thread::sleep_for(std::chrono::milliseconds(400));
     }
-    std::cout << "\n핫식스에 중독된 사ㄹㅏ.... 좀비와 조우했다!" << std::endl; // 수정 필요
+    TypePrint("\n핫식스에 중독된 사ㄹㅏ", 7, 40, 0);
+    TypePrint("....", 7, 400, 0);
+    TypePrint(" 좀비와 조우했다!", 7);
     std::this_thread::sleep_for(std::chrono::milliseconds(1000));
     std::cout << "『                       " << std::endl;
     std::cout << "     \"그워어......\"    " << std::endl;

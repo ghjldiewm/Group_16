@@ -15,7 +15,7 @@ int DiceSystem::RollDice()
         std::cout.flush();
         std::this_thread::sleep_for(std::chrono::milliseconds(200));
     }
-
+    std::cout << std::endl;
     int result = dis(gen);
     std::cout << "결과: " << result << std::endl;
 
