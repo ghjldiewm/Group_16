@@ -31,7 +31,7 @@ void Unit::TakeDamage(int damage)
     else
     {
         std::cout << "\n\n==================================================================\n" << std::endl;
-        std::cout << "적 " << Name <<"의 남은 체력: " << Status.HP << "남았습니다." << std::endl;
+        std::cout << Name <<"의 남은 체력: " << Status.HP << "남았습니다." << std::endl;
     }
 }
 

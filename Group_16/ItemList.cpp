@@ -11,6 +11,7 @@ void ItemList::GetItemList()
     Itemlist[7] = Item(7, "수호의 돌", 1004);
     Itemlist[8] = Item(8, "강철 판금 갑옷", 250);
     Itemlist[9] = Item(9, "C++ 전공 서적", 400);
+    Itemlist[10] = Item(10, "두쫀쿠", 400);
 
     Itemlist[101] = Item(101, "나뭇가지", 1);
     Itemlist[102] = Item(102, "단단한 돌", 1);

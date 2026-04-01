@@ -29,39 +29,56 @@ DungeonManager::DungeonManager(UIManager& ui) {
     ui.DrawTitleScreen(); // 필요할 때 화면 그리기
 }
 
+void TypeMessage(const std::string& message, int delayMs = 50)
+{
+    for (char c : message)
+    {
+        std::cout << c << std::flush; // 한 글자 출력 후 즉시 화면에 반영
+        std::this_thread::sleep_for(std::chrono::milliseconds(delayMs));
+    }
+    std::cout << std::endl; // 문장이 끝나면 줄바꿈
+}
+
 void DungeonManager::Gathering(Player& player, DiceSystem& dice)
 {
-    std::cout << "채집을 하러 뒷산에 왔습니다." << std::endl;
+    //std::cout << "채집을 하러 뒷산에 왔습니다." << std::endl;
+    TypeMessage("채집을 하러 뒷산에 왔습니다.");
     int result = dice.RollDice();
 
     if (result <= 3)
     {
         //잡템 
         player.GetInventory()->AddItem(1, 100);
-        std::cout << "돈 100원을 얻었습니다." << std::endl;
+        //std::cout << "돈 100원을 얻었습니다." << std::endl;
+        TypeMessage("돈 100원을 얻었습니다.");
     }
     else
     {
         //쓸만한템
         player.GetInventory()->AddItem(1, 300);
-        std::cout << "돈 300원을 얻었습니다." << std::endl;
+        //std::cout << "돈 300원을 얻었습니다." << std::endl;
+        TypeMessage("돈 300원을 얻었습니다.");
     }
 
 }
 
 void DungeonManager::StatsBoost(Player& player)
 {
-    std::cout << "코딩신의 가호를 받아 능력치가 상승했습니다!" << std::endl;
+    //std::cout << "코딩신의 가호를 받아 능력치가 상승했습니다!" << std::endl;
+    TypeMessage("코딩신의 가호를 받아 능력치가 상승했습니다!");
 
     player.AddAttack(10);
     player.AddDefense(10);
 
-    player.PrintStatus();
+    TypeMessage("공격력 +10 / 방어력 +10");
+    player.PrintStatus(); 
+
 }
 
 void DungeonManager::TreasureBox(Player& player)
 {
-    std::cout << "숨겨진 보물상자를 발견했습니다!!" << std::endl;
+    //std::cout << "숨겨진 보물상자를 발견했습니다!!" << std::endl;
+    TypeMessage("숨겨진 보물상자를 발견했습니다!!");
 
     for (int i = 0; i < 2; ++i)
     {
@@ -69,127 +86,10 @@ void DungeonManager::TreasureBox(Player& player)
         std::cout.flush(); //버퍼에 쌓지않고 그때그때 출력하게 해줌
         std::this_thread::sleep_for(std::chrono::milliseconds(500));
     }
-    std::cout << "상자 안에서 '두쫀쿠'를 발견했습니다!" << std::endl;
-}
+    //std::cout << "상자 안에서 '두쫀쿠'를 발견했습니다!" << std::endl;
+    TypeMessage("상자 안에서 '두쫀쿠'를 발견했습니다!");
+    player.GetInventory()->AddItem(10, 400);
 
-void DungeonManager::MovePlayer(Player& player, Monster*& monster, DiceSystem& dice, UIManager& ui)
-{
-    std::cout << "현재 주사위Count: " << countDice << std::endl;
-   
-    int steps = dice.ThrowDice();
-    if (steps == 0)
-    {
-        std::cout << "이동을 취소합니다." << std::endl;
-        //다시 메뉴선택을 할 수있게 (인벤을 확인하던지 스텟을 확인하던지)
-        return;
-    }
-    else
-    {
-        std::cout << "[+] 이동중..." << std::endl;
-        countDice++;
-        player.GetExperience(30); //경험치 양은 추후 조절
-    }
-
-
-    if (countDice < 3)
-    {
-        switch (steps)
-        {
-        case 1: // 스킬 1
-        {
-            break;
-        }
-        case 2: // 스킬2
-            
-            break;
-        case 3: // 스킬3
-            
-            break;
-        case 4:
-            Gathering(player, dice); 
-            break;
-        case 5:
-            StatsBoost(player);
-            break;
-        case 6:
-            TreasureBox(player);
-            break;
-        } 
-    }
-    if (3 <= countDice && countDice < 6)
-    {
-        switch (steps)
-        {
-        case 1:
-            //일반 몬스터
-            break;
-        case 2:
-            //일반 몬스터
-            break;
-        case 3:
-            //쉬운 몬스터
-            break;
-        case 4:
-            Gathering(player, dice);
-            break;
-        case 5:
-            StatsBoost(player);
-            break;
-        case 6:
-            TreasureBox(player);
-            break;
-        }
-    }
-    if (6 <=countDice &&countDice < 9)
-    {
-        switch (steps)
-        {
-        case 1:
-            //강한 몬스터
-            break;
-        case 2:
-            //일반 몬스터
-            break;
-        case 3:
-            //일반 몬스터
-            break;
-        case 4:
-            Gathering(player, dice);
-            break;
-        case 5:
-            StatsBoost(player);
-            break;
-        case 6:
-            TreasureBox(player);
-            break;
-        }
-    }
-       
-    if (countDice == 10)
-    {
-        std::cout << "\n[WARNING!] 강력한 보스의 기운이 느껴집니다!" << std::endl;
-        // 추후에 보스 나오면 수정할 부분.
-        // 
-        int yourFate = dice.ThrowDice();
-        if (yourFate == 1)
-        {
-            std::cout << "[X] You're Dead!" << std::endl;
-        }
-        else if (yourFate <= 4)
-        {
-            std::cout << "무찌르지 못했으나, 어떻게든 앞으로 나아갔습니다.." << std::endl;
-            std::cout << "🏁 던전 끝에 도달했습니다!" << std::endl;
-        }
-        else
-        {
-            std::cout << "무사히 보스를 무찔렀습니다!" << std::endl;
-            std::cout << "🏁 던전 끝에 도달했습니다!" << std::endl;
-        }
-        return;
-    }
-
-       
-        
 }
 
 

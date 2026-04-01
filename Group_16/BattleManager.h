@@ -116,6 +116,14 @@ private:
         {
             int choice;
             std::cin >> choice;
+
+            if (std::cin.fail()) {
+                std::cin.clear();
+                std::cin.ignore(100, '\n');  //최대 100글자 비우기
+                std::cout << "잘못된 입력입니다!" << std::endl;
+                continue;
+            }
+
             switch (choice)
             {
             case 1:
